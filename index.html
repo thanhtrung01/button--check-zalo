@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Zalo App</title>
+</head>
+<body>
+  <button id="zalo">Zalo</button>
+
+  <script>
+    document.getElementById("zalo").addEventListener("click", function() {
+      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.location.href = "zalo://";
+      } else if (/Android/i.test(navigator.userAgent)) {
+        window.location.href = "intent://chat/#Intent;scheme=zalo;action=android.intent.action.VIEW;end";
+      } else {
+        window.open("https://zalo.me");
+      }
+    });
+  </script>
+</body>
+</html>
